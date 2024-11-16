@@ -10,15 +10,15 @@ const StyledDrawer = styled(Box)`
   flex-wrap: wrap;
 
   > :nth-child(1) {
-    border: solid red;
+    //border: solid red;
   }
 
   > :nth-child(2) {
-    border: solid blue;
+    //border: solid blue;
   }
 
   > :nth-child(3) {
-    border: solid greenyellow;
+    //border: solid greenyellow;
   }
 `
 export default function SideDrawer(props: PropsWithChildren) {
