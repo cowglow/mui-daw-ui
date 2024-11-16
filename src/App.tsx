@@ -61,7 +61,18 @@ export default function App() {
             <Box component="main" flex={1} overflow="scroll">
                 <SideDrawer>
                     <SideDrawer.Header>
-                        <p>"Count: {count}"</p>
+                        <Box border="thin solid darkgrey">
+                            <IconButton
+                                type="button" sx={{width: 48, height: 48}}
+                                onClick={() => removeStem()}>
+                                <Remove/>
+                            </IconButton>
+                            <IconButton
+                                type="button" sx={{width: 48, height: 48}}
+                                onClick={() => addStem()}>
+                                <Add/>
+                            </IconButton>
+                        </Box>
                         <Button variant="contained" onClick={() => reset()}>RESET</Button>
                     </SideDrawer.Header>
                     <SideDrawer.Content>
@@ -98,22 +109,10 @@ export default function App() {
                             })}
                         </Box>
                     </SideDrawer.Content>
-                    <SideDrawer.SideMenu>
-                        <IconButton
-                            type="button" sx={{width: 48, height: 48}}
-                            onClick={() => removeStem()}>
-                            <Remove/>
-                        </IconButton>
-                        <IconButton
-                            type="button" sx={{width: 48, height: 48}}
-                            onClick={() => addStem()}>
-                            <Add/>
-                        </IconButton>
-                    </SideDrawer.SideMenu>
                 </SideDrawer>
             </Box>
             <Box component="footer">
-                <h1>Footer</h1>
+                <h1>Count: {count}</h1>
             </Box>
         </Root>
     );
