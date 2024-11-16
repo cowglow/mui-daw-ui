@@ -58,7 +58,7 @@ export default function App() {
             <Box component="header">
                 <h1>MUI DAW UI</h1>
             </Box>
-            <Box component="main" flex={1}>
+            <Box component="main" flex={1} overflow="scroll">
                 <SideDrawer>
                     <SideDrawer.Header>
                         <p>"Count: {count}"</p>
