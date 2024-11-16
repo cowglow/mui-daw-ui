@@ -66,19 +66,19 @@ export default function App() {
                     </SideDrawer.Header>
                     <SideDrawer.Content>
                         <Box display="flex" flexDirection="column" width="100%" gap={1}>
+                            <Menu {...{anchorEl, open}} onClose={(event: MouseEvent) => {
+                                event.preventDefault()
+                                setAnchorEl(null)
+                            }}>
+                                <MenuItem>CTA Link A</MenuItem>
+                                <MenuItem>CTA Link B</MenuItem>
+                                <MenuItem>CTA Link C</MenuItem>
+                            </Menu>
                             {Object.keys(stems).map((stemKey, index) => {
                                 return (
                                     <Box key={stemKey} display="flex" flex={1} alignItems="center"
                                          bgcolor={stemColors[index % stemColors.length]} maxHeight={50}>
                                         <Box flex={1}>Track:<br/>{stemKey}</Box>
-                                        <Menu {...{anchorEl, open}} onClose={(event: MouseEvent) => {
-                                            event.preventDefault()
-                                            setAnchorEl(null)
-                                        }}>
-                                            <MenuItem>CTA Link A</MenuItem>
-                                            <MenuItem>CTA Link B</MenuItem>
-                                            <MenuItem>CTA Link C</MenuItem>
-                                        </Menu>
                                         {stems[stemKey].segments.map((clip, clipIndex) => {
                                             return (
                                                 <Box key={`${stemKey}-segment-${clipIndex}`} flex={1} margin={1}>
